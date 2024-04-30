@@ -27,11 +27,15 @@ export class TutorialDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    if (!this.viewMode) {
-      this.message = '';
-      this.getTutorial(this.route.snapshot.params['id']);
+    if (!this.viewMode && this.route.snapshot.params) { // Vérifiez si this.route.snapshot.params est défini
+      const id = this.route.snapshot.params['id'];
+      if (id) {
+        this.message = '';
+        this.getTutorial(id);
+      }
     }
   }
+  
 
   getTutorial(id: string): void {
     this.tutorialService.get(id).subscribe({

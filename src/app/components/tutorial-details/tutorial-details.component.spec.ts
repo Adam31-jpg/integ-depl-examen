@@ -1,7 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute, convertToParamMap } from '@angular/router'; // Importez ActivatedRoute
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { TutorialDetailsComponent } from './tutorial-details.component';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('TutorialDetailsComponent', () => {
   let component: TutorialDetailsComponent;
@@ -9,7 +10,18 @@ describe('TutorialDetailsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TutorialDetailsComponent]
+      declarations: [TutorialDetailsComponent],
+      imports: [HttpClientTestingModule],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: {
+              paramMap: convertToParamMap({ id: '1' }) // Fournit un paramMap mocké avec un ID
+            }
+          }
+        }
+      ]
     })
     .compileComponents();
     

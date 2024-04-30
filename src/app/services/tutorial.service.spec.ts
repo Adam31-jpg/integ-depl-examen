@@ -7,7 +7,9 @@ describe('TutorialService', () => {
   let service: TutorialService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule], // Fournit HttpClientTestingModule dans le contexte de test
+    });
     service = TestBed.inject(TutorialService);
   });
 

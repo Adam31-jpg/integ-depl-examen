@@ -1,12 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { Tutorial } from '../../models/tutorial.model';
 import { TutorialService } from '../../services/tutorial.service';
+import { TutorialDetailsComponent } from '../tutorial-details/tutorial-details.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-tutorials-list',
   templateUrl: './tutorials-list.component.html',
   styleUrls: ['./tutorials-list.component.css'],
 })
+
 export class TutorialsListComponent implements OnInit {
   tutorials?: Tutorial[];
   currentTutorial: Tutorial = {};
