@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Tutorial } from '../models/tutorial.model';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 const baseUrl = 'http://localhost:8080/api/tutorials';
 
