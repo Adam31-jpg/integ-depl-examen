@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TutorialDetailsComponent } from './tutorial-details.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('TutorialDetailsComponent', () => {
   let component: TutorialDetailsComponent;
